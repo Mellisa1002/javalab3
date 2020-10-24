@@ -64,17 +64,93 @@
 
 <br>
 
+1.自己先是大约画了一下流程图，明确大致怎么写这个程序以及需要实现哪些功能
+2.根据不同的功能确定需要有的基本类和方法
+3.重写toString（）方法，来实现对学生信息的简单调用
 
-###流程图
+### 流程图
 ----
 ![](https://github.com/Mellisa1002/javalab3/blob/main/9566eac7b5cb52137c6a8e5a02a078a.png)
 
 
-###核心代码
+### 核心代码
 
 <br>
 
+```
+while (flag1) {                     //while循环使选课系统持续在线
+	
+	System.out.println(toString(stu));
+	System.out.println("选课请输入1,退出选课系统输入0:");        // next方式接收字符串,并判断是否还有输入	
+	Scanner choose1 = new Scanner(System.in);      // 从键盘接收数据choose
+    if (choose1.hasNext()) {                       //choose1为第一次接受的键盘输入
+    	String str1 = choose1.next();              //把第一次键盘输入传递给str1
+    	 switch(str1) {
+    	 case "0" :
+    	 {
+    		 System.out.println("已退出选课系统.");
+    		 flag1 = false;                       //flag1为false后直接结束最外层while循环
+    	 }
+    	 break;
+    	 case "1" :
+    	 {
+    		 System.out.println("请输入想要选择的课程的序号:");
+    		 Scanner scan = new Scanner(System.in);  //第二次键盘输入为scan
+    		 if (scan.hasNext())
+    		 {
+    			 String cbs = scan.next();               //第二次键盘输入传递给cbs
+    			 switch(cbs)                             //cbs为第二次输入的选课序号
+    			 {
+    			 	case "0" :
+    			 		{if(course1.choice) {System.out.println("恭喜,选课成功.");stu.setCoursed("线性代数");
+    			 		loopMethod(stu);flag1=false;
+    			 		}
+    			 		else
+    			 			{System.out.println("无剩余课余量,选课失败!");flag1 = false;}}
+    			 	break; 
+    			 	case "1" :
+    			 	{
+    			 		if(course2.choice) {System.out.println("恭喜,选课成功.");stu.setCoursed("大学英语");
+    			 		loopMethod(stu);flag1 = false;
+    			 	}
+    			 		else
+    			 			{System.out.println("无剩余课余量,选课失败!");flag1 = false;}}
+    			 	break; 
+    			 	case "2" :
+    			 	{
+    			 		if(course3.choice) {System.out.println("恭喜,选课成功.");stu.setCoursed("中国哲学史");
+    			 		loopMethod(stu);flag1 = false;
+    			 	}
+    			 		else
+    			 			{System.out.println("无剩余课余量,选课失败!");flag1 = false;}}
+    			 	break;
+    			 	case "3" :
+    			 	{
+    			 		if(course4.choice) {System.out.println("恭喜,选课成功.");stu.setCoursed("实习课程");
+    			 		loopMethod(stu);flag1 = false;
+    			 	}
+    			 		else
+    			 			{System.out.println("无剩余课余量,选课失败!");flag1 = false;}}
+    			 	break;
+    			 	default : 
+    			 	{System.out.println("你输入了一个不正确的选课序号!");flag1 = false;}
+    			 	break;
+    			 }
+    		 }
+    		 scan.close();} 
+    	break;
+    	default :
+    	{System.out.println("你输入了一个不正确的选择序号!");flag1 = false;}   //输入错误的编号则退出选课系统
+    	break;       
+    }}
+    choose1.close();
+ 
+	 }
+```
 
-###编程感想
+### 编程感想
 
 <br>
+
+这次的编程题感觉就像一个比较完整的题（？）了，因为是要自己从头到尾有始有终各方面都要考虑到。主要更像是在脑子里边过一遍“如果我要用这个系统，这个系统该有什么功能”，在想明白有什么功能之后，下一步想的是“我应该如何实现这些功能呢？”这就是我自己完整的编程思路了。<br>
+如果我想要用一个好用的选课系统，那肯定是不能老登不上，动不动崩溃（这些当然和我写的没关系了），所以我要做的就是实现最基本的功能了。学生能选课，就是要有课，有老师来选。<br>
