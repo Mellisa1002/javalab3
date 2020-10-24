@@ -57,7 +57,7 @@
 
 ### 实验结果
 ----
-![](  )
+![](https://github.com/Mellisa1002/javalab3/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201024200700.png)
 
 <br>
 
@@ -67,8 +67,8 @@
 
 
 ###流程图
-
-<br>
+----
+![](https://github.com/Mellisa1002/javalab3/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201024200700.png)
 
 
 ###核心代码
